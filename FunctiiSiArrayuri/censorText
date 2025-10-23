@@ -1,0 +1,20 @@
+const censorText = (text, dictionary) => {
+    const words = text.split(' ')
+
+    const censored = words.map((word) => {
+        if(dictionary.indexOf(word.toLowerCase()) !== -1) {
+            if(word.length <= 2) {
+                return word;
+            }
+            return word[0] + '*'.repeat(word.length - 2) + word[word.length - 1];
+        }
+        return word;
+    })
+    return censored.join(' ')
+
+}
+
+const text = "javascript este minunat si nu este greu"
+const curseWords = ["minunat", "este", "si"]
+
+console.log(censorText(text, curseWords))
