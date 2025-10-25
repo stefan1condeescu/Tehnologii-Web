@@ -43,16 +43,3 @@ console.log(Stream.count);
 
 const anotherConstant = new ConstantStream(5);
 console.log(Stream.count);
-
-class Weapon{
-    constructor(description){
-        this.description = description;
-    }
-
-    fire(){
-        console.log(`${this.description} is firing`)
-    }
-}
-
-const w0 = new Weapon(`pew pew laser`)
-w0.fire();
