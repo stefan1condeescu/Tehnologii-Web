@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
+    "body-parser": "^2.2.1",
+    "cors": "^2.8.5",
     "crypto-js": "^4.2.0",
+    "express": "^5.1.0",
     "rimraf": "^6.1.2"
   }
 }
