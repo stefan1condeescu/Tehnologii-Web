@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <script>
+            window.onload = () => {
+                const form = document.getElementById("contactForm");
+                const nameInput = document.getElementById("name");
+                const phoneInput = document.getElementById("phone");
+                const tableBody = document.getElementById("contactsBody");
+
+                const formSubmitHandler = (e) => {
+                    e.preventDefault(); // previne reincarcarea paginii
+
+                    const name = nameInput.value.trim();
+                    const phone = phoneInput.value.trim();
+
+                    if(!name || !phone) {
+                        alert("Completeaza ambele campuri!");
+                        return;
+                    }
+
+                    // creare rand nou in tabel
+                    const row = document.createElement("tr");
+                    const nameCell = document.createElement("td");
+                    nameCell.textContent = name;
+
+                    const phoneCell = document.createElement("td");
+                    phoneCell.textContent = phone;
+
+                    row.appendChild(nameCell);
+                    row.appendChild(phoneCell);
+                    tableBody.appendChild(row);
+
+                    // golim campurile formularului
+                    nameInput.value = "";
+                    phoneInput.value = "";
+                };
+
+                form.onsubmit = formSubmitHandler;
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Agenda</h1>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nume</th>
+                    <th>Telefon</th>
+                </tr>
+            </thead>
+            <tbody id="contactsBody">
+                <!-- contactele vor fi adaugate aici din js -->
+            </tbody>
+        </table>
+
+        <h2>Adauga contact</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Nume" />
+            <input type="text" id="phone" placeholder="Telefon" />
+            <button type="submit">Adauga</button>
+        </form>
+    </body>
+</html>
