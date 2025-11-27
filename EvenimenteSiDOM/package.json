@@ -1,5 +1,9 @@
 {
   "name": "evenimente-si-dom",
   "version": "1.0.0",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "crypto-js": "^4.2.0",
+    "rimraf": "^6.1.2"
+  }
 }
