@@ -15,7 +15,6 @@ async function main() {
     // creeaza un fisier in director
     fs.writeFileSync(fileName, "Auto generated file");
     console.log("File created:", fileName);
-
     // sterge directorul folosind rimraf 
     await rimraf(folderName);
     console.log("Directory deleted:", folderName);

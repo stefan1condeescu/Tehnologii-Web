@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script>
+            window.onload = () => {
+                const button = document.getElementById("myBtn");
+                const myEvent = new Event("myEvt");
+
+                // crearea evenimentului custom
+                const myCustomEvent = new Event("customClick");
+                // ce se intampla cand se declanseaza evenimentul custom
+                document.addEventListener("customClick",() => {
+                    console.log("Eveniment custom declansat");
+                })
+
+                const clickHandler = () => {
+                    document.dispatchEvent(myEvent);
+                    document.dispatchEvent(myCustomEvent); // declansarea evenimentului meu custom
+                    
+                };
+
+                const myEvtHandler = () => {
+                    console.log("Butonul a fost apasat");
+                };
+
+                button.onclick = clickHandler;
+
+                // a 2-a modalitate de a adauga un event listener
+                document.addEventListener("myEvt", myEvtHandler);
+            };
+        </script>
+    </head>
+    <body>
+        <button id="myBtn">Click me!</button>
+    </body>
+</html>
