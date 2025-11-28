@@ -18,6 +18,11 @@ const array = [
     {id:5, name: "Marius", age: 35}
 ];
 
+router.route("/getList").get((req, res) => {
+    res.json(array);
+});
+
+
 router.route("/getList/:id").get((req, res) => {
     const id = parseInt(req.params.id);
     const item = array.find(el => el.id === id);
